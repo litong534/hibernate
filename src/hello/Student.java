@@ -4,6 +4,13 @@ public class Student {
 	private int id;
 	private String name;
 	private int age;
+	private Teacher teacher;
+	public Teacher getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 	public int getId() {
 		return id;
 	}

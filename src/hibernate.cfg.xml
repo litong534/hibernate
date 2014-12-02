@@ -35,6 +35,8 @@
 
         <mapping resource="hello/Student.hbm.xml"/>
 		<mapping class="hello.Student"/>
+		<mapping resource="hello/Teacher.hbm.xml"/>
+		<mapping class="hello.Teacher"/>
     </session-factory>
 
 </hibernate-configuration>

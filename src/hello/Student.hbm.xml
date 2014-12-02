@@ -4,10 +4,13 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="hello.Student">
-		<id name="id" />
+	<class name="hello.Student" dynamic-update="true">
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
 		<property name="name" />
 		<property name="age" />
+		<one-to-one name="teacher" property-ref="student"></one-to-one>
     </class>
 	
 </hibernate-mapping>

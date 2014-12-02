@@ -4,13 +4,13 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="hello.Student" dynamic-update="true">
+	<class name="hello.Teacher" dynamic-update="true">
 		<id name="id">
 			<generator class="identity"></generator>
 		</id>
 		<property name="name" />
-		<property name="age" />
-		<one-to-one name="teacher" property-ref="student"></one-to-one>
+		<property name="title" />
+		<many-to-one name="student" column="studentId" unique="true"></many-to-one>
     </class>
 	
 </hibernate-mapping>

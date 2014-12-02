@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 public class Test {
 	static Configuration cfg = null;
@@ -51,12 +52,17 @@ public class Test {
 	        sf.close();
 	}
 	public static void main(String[] args) {
-		Student s = new Student();
-		s.setId(1);
-		s.setName("zhangsan");
-		s.setAge(20);
-		
-		testUpdate(s);
-		
+//		Student s = new Student();
+//		s.setId(1);
+//		s.setName("zhangsan");
+//		s.setAge(20);
+//		
+//		testUpdate(s);
+		Test test = new Test();
+		test.schemaExport();
+	}
+	
+	public void schemaExport(){
+		new SchemaExport(new Configuration().configure()).create(true, false);
 	}
 }
